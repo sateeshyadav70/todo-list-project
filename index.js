@@ -2,13 +2,15 @@ import express from 'express';
 
 const app=express();
 
+app.set("view engine","ejs")
+
 app.get("/",(req,res)=>{
-  res.send("to do list app");
+  res.render("list");
 })
 app.get("/add",(req,res)=>{
-  res.send("add to do list");
+  res.render("add");
 })
 app.get("/update",(req,res)=>{
-  res.send("update to do list");
+  res.render("update");
 })
 app.listen(3000)
