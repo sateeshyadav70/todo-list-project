@@ -76,3 +76,42 @@ hr{
 .btn:hover{
   background-color: lightgreen;
 }
+.task-list{
+  list-style-type:none;
+  padding:0;
+  margin:auto;
+  max-width:600px;
+
+}
+.task-item{
+  background-color: #fff;
+  margin-bottom: 15px;
+  padding:15px 20px;
+  border-left: solid 5px greenyellow;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+.task-item:hover{
+  background-color: rgb(224, 195, 157);
+  transition: 0.3s ease;
+}
+.task-title{
+  font-weight: bold;
+  font-size:18px;
+  color:#333;
+  margin-bottom: 8px;
+}
+.task-delete{
+  margin-top: 10px;;
+  background-color: rgb(196, 56, 56);
+  border:none;
+  color:#fff;
+  padding:6px 10px;
+  border-radius:4px;
+  cursor:pointer;
+ text-decoration: none;
+  display: inline-block;
+}
+.task-delete:hover{
+  background-color: rgb(126, 28, 28);
+}
