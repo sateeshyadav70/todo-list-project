@@ -10,13 +10,13 @@
   <%- include('navbar') %>
   <div class="container">
       <h1>Update Task</h1>
-  <form  class="todo-form" action="/update"  method="post">
-    <input class="input" type="text" name="title" placeholder="enter task title">
+  <form  class="todo-form" action="/update/<%= result._id %>"  method="post">
+    <input class="input" value="<%= result.title %>" type="text" name="title" placeholder="enter task title">
     <br>
     <br>
-    <textarea class="input" name="description" id="" ></textarea>
+    <textarea class="input" name="description" id=""><%= result.description %></textarea>
     <br>
-    <button class="btn">Add New Task</button>
+    <button class="btn">Update Task</button>
   </form> 
   </div>
   

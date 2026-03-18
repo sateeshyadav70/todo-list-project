@@ -64,8 +64,52 @@ app.get("/delete/:id",async (req,res)=>{
   }
 
 })
-app.post("/update",(req,res)=>{
+app.get("/update/:id",async (req,res)=>{
+  const db= await connection();
+  const collection=db.collection(collectionName)
+  const result= await collection.findOne({_id:new ObjectId(req.params.id)});
+  console.log(req.body);
+  if(result){
+     res.render("update",{result});
+  }else{
+  res.send("some error");
+  }
 
-  res.redirect("/")
 })
-app.listen(3300)
+app.post("/update/:id",async (req,res)=>{
+  const db= await connection();
+  const collection=db.collection(collectionName)
+ const filter={_id:new ObjectId(req.params.id)};
+ const update={$set:{title:req.body.title,description:req.body.description}};
+  const result= await collection.updateOne(filter,update);
+  console.log(req.body);
+  if(result){
+     res.redirect("/");
+  }else{
+  res.send("some error");
+  }
+
+})
+app.post("/multi-delete",async(req,res)=>{
+  const db=await connection();
+  const collection=db.collection(collectionName)
+  console.log(req.body.selectedTask)
+  let selectedTask=undefined;
+  if(Array.isArray(req.body.selectedTask)){
+     selectedTask = req.body.selectedTask.map((id)=>new ObjectId(id));
+  }else{
+    selectedTask = [new ObjectId(req.body.selectedTask)];
+  }
+  const result= await collection.deleteMany({_id:{$in:selectedTask}});
+ if(result){
+  res.redirect("/");
+ }else{
+  res.send("some error");
+ }
+})
+
+const PORT=3300;
+app.listen(PORT,()=>{
+  console.log(`server running this port http://localhost:${PORT}`)
+
+})

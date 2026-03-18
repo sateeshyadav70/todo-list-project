@@ -1,6 +1,8 @@
 body{
+  background-color: rgb(141, 150, 170);
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
+
   
 }
 nav{
@@ -44,12 +46,19 @@ hr{
   align-items:center;
 }
 .todo-form{
-  background-color: #cabcbc;
+  background-color: #4eaee6;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px;
+  box-shadow: rgb(214, 218, 32) 0px  8px 16px;
   max-width: 400px;
   width: 100%;
+  border-left:  solid 5px rgb(72, 64, 187);
+  background-color: transparent;
+}
+.todo-form:hover{
+  background-color: rgb(224, 195, 157);
+  transition: 0.3s ease;
 }
 .input{
   width: 100%;
@@ -63,7 +72,7 @@ hr{
   resize: vertical;
 }
 .btn{
-  background-color: rgb(18, 50, 63);
+  background-color: rgb(69, 98, 109);
   border:none;
   border-radius: 6px;
   color:white;
@@ -72,6 +81,8 @@ hr{
   margin-top: 10px;
   width: 100%;
   padding: 12px;
+  box-shadow: #bf34db 0px 2px 4px;
+
 }
 .btn:hover{
   background-color: lightgreen;
@@ -85,11 +96,13 @@ hr{
 }
 .task-item{
   background-color: #fff;
-  margin-bottom: 15px;
+  margin-bottom: 1px;
   padding:15px 20px;
-  border-left: solid 5px greenyellow;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-left: 5px solid greenyellow;
+  box-shadow: 0 2px 4px rgba(39, 182, 127, 0.829);
   border-radius: 6px;
+  background-color:  transparent ;
+
 }
 .task-item:hover{
   background-color: rgb(224, 195, 157);
@@ -103,7 +116,7 @@ hr{
 }
 .task-delete{
   margin-top: 10px;;
-  background-color: rgb(196, 56, 56);
+  background-color: rgb(165, 15, 15);
   border:none;
   color:#fff;
   padding:6px 10px;
@@ -111,7 +124,57 @@ hr{
   cursor:pointer;
  text-decoration: none;
   display: inline-block;
+  box-shadow: rgba(95, 216, 39, 0.74) 0px 2px 4px;
 }
 .task-delete:hover{
   background-color: rgb(126, 28, 28);
 }
+.task-update{
+  margin-top: 10px;;
+  background-color: rgb(35, 204, 49);
+  border:none;
+  color:#fff;
+  padding:6px 10px;
+  border-radius:4px;
+  cursor:pointer;
+ text-decoration: none;
+  display: inline-block;
+  box-shadow: rgb(182, 7, 7) 0px 2px 4px;
+}
+.task-update:hover{
+  background-color: rgb(61, 179, 169);
+}
+.delete-selected-task{
+  background-color: rgb(196, 56, 56);
+  color:#fff;
+  border:none;
+  border-radius: 4px;
+  padding: 10px 8px;
+  display:inline-block;
+  cursor: pointer;
+  margin-bottom: 8px;
+  box-shadow: rgb(25, 209, 19) 0px 2px 4px;
+}
+.check{
+  box-shadow: rgb(29, 17, 197) 0px 2px 4px;
+  border: none;
+  border-radius: 4px;
+}
+.card{
+  background-color: transparent;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px;
+  box-shadow: rgb(32, 190, 218) 0px  8px 16px;
+  border:none;
+}
+.mango{
+  background-color: transparent;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px;
+  box-shadow: rgb(32, 190, 218) 0px  8px 16px;
+  border:none;
+}
+  
+
